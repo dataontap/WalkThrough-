@@ -1,4 +1,4 @@
-# Shookla.ai - AI-Powered Walkthrough Recording Platform
+WalkThrough is AI-powered Digital Recording Service
 
 ## Overview
 
@@ -61,13 +61,3 @@ This project is configured for Railway deployment with real Chrome browser autom
 npm run dev    # Start development server
 npm run build  # Build for production
 npm start      # Run production build
-```
-
-## Cost After Deployment
-- Railway Hobby Plan: $5/month
-- Unlimited recordings with real browser automation
-- No per-recording charges
-
----
-
-**This is the walkthrough recording project - not the "gorse repository"**
