@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.local
+recordings/
+*.log
+.DS_Store
+.vscode/
+.replit
+.upm
+replit.nix
