@@ -22,16 +22,17 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci                           # Install ALL dependencies (including dev)
-RUN npm run build                    # Build with vite and esbuild available
-RUN npm prune --production          # Remove dev dependencies after build
+# Install all dependencies (including dev dependencies for build)
+RUN npm ci
 
 # Copy source code
 COPY . .
 
 # Build the application
 RUN npm run build
+
+# Remove dev dependencies after build to reduce image size
+RUN npm prune --production
 
 # Expose port
 EXPOSE 5000
