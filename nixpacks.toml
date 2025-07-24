@@ -1,0 +1,52 @@
+[phases.setup]
+nixPkgs = [
+  "nodejs_20",
+  "npm-9_x",
+  "python3",
+  "pkg-config",
+  "cairo",
+  "pango",
+  "libpng",
+  "jpeg",
+  "giflib",
+  "librsvg",
+  "glib",
+  "gdk-pixbuf",
+  "freetype",
+  "fontconfig",
+  "gettext",
+  "ffmpeg",
+  "xorg.libX11",
+  "xorg.libXext",
+  "xorg.libXrandr",
+  "xorg.libXcomposite",
+  "xorg.libXdamage",
+  "xorg.libXfixes",
+  "xorg.libXrender",
+  "xorg.libXss",
+  "xorg.libXtst",
+  "nss",
+  "nspr",
+  "at-spi2-atk",
+  "at-spi2-core",
+  "atk",
+  "cups",
+  "dbus",
+  "expat",
+  "gtk3",
+  "libdrm",
+  "libxkbcomposite",
+  "alsa-lib"
+]
+
+[phases.install]
+cmds = ["npm ci"]
+
+[phases.build]
+cmds = [
+  "npm run build:client",
+  "npm run build:server"
+]
+
+[start]
+cmd = "npm start"
