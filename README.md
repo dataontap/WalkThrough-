@@ -1,4 +1,4 @@
-# Shookla.ai - AI-Powered Walkthrough Recording Platform
+AI-Powered Walkthrough Recording Platform
 
 ## Overview
 
@@ -69,5 +69,3 @@ npm start      # Run production build
 - No per-recording charges
 
 ---
-
-**This is the walkthrough recording project - not the "gorse repository"**
