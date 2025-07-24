@@ -23,7 +23,9 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci --only=production
+RUN npm ci                           # Install ALL dependencies (including dev)
+RUN npm run build                    # Build with vite and esbuild available
+RUN npm prune --production          # Remove dev dependencies after build
 
 # Copy source code
 COPY . .
