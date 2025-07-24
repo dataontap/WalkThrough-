@@ -1,22 +1,28 @@
 FROM node:20-alpine
 
-RUN apk add --no-cache chromium nss freetype harfbuzz ca-certificates ttf-freefont
+# Install Chrome
+RUN apk add --no-cache chromium
 
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
-    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium \
-    CHROME_BIN=/usr/bin/chromium \
+# Environment variables
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium \
     NODE_ENV=production
 
 WORKDIR /app
+
+# Install dependencies
 COPY package*.json ./
 RUN npm ci
+
+# Copy all files
 COPY . .
 
-# Debug: List files to ensure vite.config.ts exists
-RUN ls -la vite.config.ts
+# Build frontend only, skip server bundling
+RUN vite build
 
-# Build with verbose output for debugging
-RUN npm run build || (echo "Build failed, listing files:" && ls -la && exit 1)
+# Create server directory in dist
+RUN mkdir -p dist && cp -r server dist/
 
 EXPOSE 5000
-CMD ["npm", "start"]
+
+# Run server directly with tsx (no bundling)
+CMD ["npx", "tsx", "server/index.ts"]
