@@ -1,4 +1,4 @@
-# Shookla.ai - AI-Powered Walkthrough Recording Platform
+AI-Powered Walkthrough Recording Platform
 
 ## Overview
 
@@ -67,7 +67,3 @@ npm start      # Run production build
 - Railway Hobby Plan: $5/month
 - Unlimited recordings with real browser automation
 - No per-recording charges
-
----
-
-**This is the walkthrough recording project - not the "gorse repository"**
