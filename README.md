@@ -1,4 +1,4 @@
-# Shookla.ai - AI-Powered Walkthrough Recording Platform
+AI-Powered Walkthrough Recording Service
 
 ## Overview
 
@@ -68,7 +68,3 @@ npm start      # Run production build
 - Render Starter Plan: $7/month
 - Unlimited recordings with real browser automation
 - No per-recording charges
-
----
-
-**This is the walkthrough recording project - not the "gorse repository"**
