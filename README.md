@@ -1,4 +1,4 @@
-# WalkThrough - AI-Powered Walkthrough Video Recording Platform
+# Shookla.ai - AI-Powered Walkthrough Recording Platform
 
 ## Overview
 
