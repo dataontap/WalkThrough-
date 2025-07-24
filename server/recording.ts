@@ -399,21 +399,21 @@ Provide 5-12 logical steps that would accomplish the described walkthrough.`;
       
       // Launch browser with recording capabilities
       browser = await puppeteer.launch({
-        headless: "new", // Use new headless mode for better compatibility
-        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || process.env.CHROME_BIN || '/usr/bin/chromium-browser',
-        args: [
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-          '--disable-dev-shm-usage',
-          '--disable-web-security',
-          '--allow-running-insecure-content',
-          '--window-size=1280,720',
-          '--disable-gpu',
-          '--disable-features=VizDisplayCompositor',
-          '--user-data-dir=/app/.chrome',
-          '--single-process'
-        ]
-      });
+  headless: "new",
+  executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || process.env.CHROME_BIN || '/usr/bin/chromium-browser',
+  args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-web-security',
+    '--allow-running-insecure-content',
+    '--window-size=1280,720',
+    '--disable-gpu',
+    '--disable-features=VizDisplayCompositor',
+    '--user-data-dir=/app/.chrome',
+    '--single-process'
+  ]
+});
 
       const page = await browser.newPage();
       await page.setViewport({ width: 1280, height: 720 });
