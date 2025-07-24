@@ -29,7 +29,7 @@ RUN npm ci --only=production
 COPY . .
 
 # Build the application
-RUN npm run build:client && npm run build:server
+RUN npm run build
 
 # Expose port
 EXPOSE 5000
